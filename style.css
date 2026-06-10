@@ -1,0 +1,221 @@
+body {
+  background: rgb(65, 64, 65);
+  font-family: "Chivo Mono", monospace;
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  padding: 1%;
+  color: white;
+}
+.container {
+  border: 1px solid white;
+  background: black;
+  flex: 4;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2%;
+}
+.sidebar {
+  border: 1px solid white;
+  background: black;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  align-items: center;
+  padding-top: 2%;
+  max-width: 400px;
+  justify-content: flex-start;
+}
+.sidebar a {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+h2 {
+  margin: 0;
+  padding-left: 2%;
+  margin-bottom: 1.3em;
+}
+a {
+  color: white;
+}
+a:hover {
+  color: gray;
+}
+img {
+  margin-block: 7%;
+}
+canvas {
+  border: 1px solid transparent;
+  background: white;
+  cursor: crosshair;
+  touch-action: none;
+}
+.color-btn {
+  width: 30px;
+  height: 30px;
+  display: inline-block;
+  cursor: pointer;
+  border: 1px solid gray;
+}
+/*.color-btn.active {
+  outline: 2px solid white;
+  box-shadow: 0 0 5px gray;
+}*/
+input[type="color" i] {
+  inline-size: 30px;
+  block-size: 30px;
+  border-width: 1px;
+  display: inline-block;
+}
+input[type="color" i]:hover {
+  cursor: pointer;
+}
+input[type=range] {
+  border-radius: 5% / 25%;
+  margin-top: 1.2em;
+  margin-bottom: 0.7em;
+  height: 1.2em;
+  -webkit-appearance: none;
+  background: gray;
+  width: calc(100% - 28px);
+  box-sizing: border-box;
+  overflow: visible
+}
+/* Special styling for WebKit/Blink */
+input[type=range]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  border: 1px solid #000000;
+  height: 1.4em;
+  width: 1.4em;
+  border-radius: 50%;
+  background: #ffffff;
+  cursor: pointer;
+  margin-top: -14px; /* You need to specify a margin in Chrome, but in Firefox and IE it is automatic */
+  box-shadow: 1px 1px 1px #000000, 0px 0px 1px #0d0d0d; /* Add cool effects to your sliders! */
+}
+/* All the same stuff for Firefox */
+input[type=range]::-moz-range-thumb {
+  box-shadow: 1px 1px 1px #000000, 0px 0px 1px #0d0d0d;
+  border: 1px solid #000000;
+  height: 1.4em;
+  width: 1.4em;
+  border-radius: 50%;
+  background: #ffffff;
+  margin-top: -14px;
+  cursor: pointer;
+}
+/* All the same stuff for IE */
+input[type=range]::-ms-thumb {
+  box-shadow: 1px 1px 1px #000000, 0px 0px 1px #0d0d0d;
+  border: 1px solid #000000;
+  height: 1.4em;
+  width: 1.4em;
+  border-radius: 50%;
+  background: #ffffff;
+  cursor: pointer;
+}
+.row {
+  display: flex;
+  gap: 1em;
+}
+.row::after {
+  content: "";
+  display: table;
+  clear: both;
+}
+button {
+  border: 1px solid gray;
+  background: transparent;
+  padding: 0.8%;
+  font-size: 1.1em;
+  color: white;
+  font-family: "Chivo Mono", monospace;
+}
+#sendbtn {
+  margin-top: auto;
+  margin-bottom: 0;
+  width: 100%;
+  border: 1px solid white;
+}
+button:hover {
+  background: gray;
+  cursor: pointer;
+}
+button.active {
+  background: gray;
+}
+kbd {
+  background: #4d4d4d;
+  padding-block: 0.3%;
+  padding-inline: 0.7%;
+  border-radius: 15%;
+  font-style: italic;
+  font-size: 1.1em;
+}
+#mainTab {
+  border: none;
+  margin-bottom: 20px;
+  min-width: 250px; min-height: 15px;
+  padding: 7px;
+}
+@font-face {
+  font-family: "Chivo Mono"; 
+  src: url("/fonts/ChivoMono.ttf") format("truetype"); 
+  font-style: normal; 
+  font-weight: normal; 
+}
+textarea {
+  resize: none;
+  font-size: 1.2em;
+  width: 85%;
+  height: 10%;
+  overflow-y: auto;
+  max-height: 100px;
+  min-height: 60px;
+  box-sizing: border-box;
+}
+#filename {
+  width: 100%;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+input[type="file"]::file-selector-button {
+  border: none;
+  padding: 6px 12px;
+  background: #333;
+  color: white;
+  border-radius: 6px;
+}
+.loader {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.5);
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+
+  z-index: 9999;
+}
+.hidden {
+  display: none;
+}
+.spinner {
+  width: 50px;
+  height: 50px;
+  border: 5px solid lightgray;
+  border-top: 5px solid black;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+  margin-bottom: 10px;
+}
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
